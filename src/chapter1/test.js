@@ -1,0 +1,23 @@
+var t = 10;
+var arr = [1, 2, 3, 4, 5];
+var Color;
+(function (Color) {
+    Color[Color["RED"] = 0] = "RED";
+    Color[Color["GREEN"] = 1] = "GREEN";
+    Color[Color["BLUE"] = 2] = "BLUE";
+})(Color || (Color = {}));
+var color = Color.GREEN;
+var constValue = 10;
+var path;
+path = "/login";
+console.log(path);
+path = ["/login", "/register"];
+var emails = new Array();
+emails.push("test@gmail.com");
+// console.log(path);
+// console.log(t);
+// console.log(arr);
+// console.log(color);
+console.log(emails);
+console.log(Color);
+console.log(Color.BLUE);
