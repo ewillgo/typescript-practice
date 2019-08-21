@@ -43,3 +43,4 @@ vector.normalize();
 vector.toArray((arr: number[]) => {
   console.log("x: " + arr[0] + ", y: " + arr[1]);
 });
+

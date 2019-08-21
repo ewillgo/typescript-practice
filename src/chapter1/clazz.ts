@@ -1,6 +1,6 @@
 class Character {
 
-  fullname: string;
+  private fullname: string;
 
   constructor(firstname: string, lastname: string) {
     this.fullname = firstname + " " + lastname;
