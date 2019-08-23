@@ -10,6 +10,10 @@ class Character {
     return name ? "Hi, " + name + "! my name is " + this.fullname : "Hi, my name is " + this.fullname;
   }
 
+  public static test() {
+
+  }
+
 }
 
 let spark = new Character("Will", "Chen");

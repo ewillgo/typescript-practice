@@ -5,6 +5,8 @@ var Character = /** @class */ (function () {
     Character.prototype.greet = function (name) {
         return name ? "Hi, " + name + "! my name is " + this.fullname : "Hi, my name is " + this.fullname;
     };
+    Character.test = function () {
+    };
     return Character;
 }());
 var spark = new Character("Will", "Chen");
