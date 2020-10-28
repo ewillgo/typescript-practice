@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
+    "strict": true,
     "outDir": "./dist",
     "target": "esnext",
     "allowJs": false,
     "removeComments": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "sourceMap": true
