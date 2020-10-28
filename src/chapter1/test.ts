@@ -1,10 +1,10 @@
-let t: number = 10;
+let t = 10;
 let arr: number[] = [1, 2, 3, 4, 5];
 
 enum Color {RED, GREEN, BLUE}
 
 let color: Color = Color.GREEN;
-const constValue: number = 10;
+const constValue = 10;
 
 let path: string[] | string;
 path = "/login";

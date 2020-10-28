@@ -1,19 +1,18 @@
 @logClass
 class Person {
+  public name: string
+  public surname: string
 
-  public name: string;
-  public surname: string;
-
-  constructor(name: string, surname: string) {
-    this.name = name;
-    this.surname = surname;
+  public constructor(name: string, surname: string) {
+    this.name = name
+    this.surname = surname
   }
 
   public saySomething(something: string): string {
-    return this.name + " " + this.surname + " says: " + something;
+    return this.name + ' ' + this.surname + ' says: ' + something
   }
 }
 
 function logClass(target: any) {
-
+  console.log('logClass -> target', target)
 }
