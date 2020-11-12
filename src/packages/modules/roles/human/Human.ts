@@ -3,9 +3,9 @@ import { Foods } from '../../goods/Foods'
 import { Eat, Mouth, Speak } from './Mouth'
 
 export abstract class Human implements Eat, Speak, Render {
-  protected mouth: Mouth
+  protected mouth?: Mouth
 
-  public constructor(mouth: Mouth) {
+  protected setMouth(mouth: Mouth): void {
     this.mouth = mouth
   }
 

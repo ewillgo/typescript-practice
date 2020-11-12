@@ -1,4 +1,5 @@
-import { MessageSender } from '../../../bus/Message'
+import { busChannel } from '../../../bus/Constant'
+import { EventBus, EventSource } from '../../../bus/EventBus'
 import { Render } from '../../../graphics/Render'
 import { Goods } from '../../goods/Goods'
 
@@ -10,15 +11,53 @@ export interface Speak {
   say: (message: string) => void
 }
 
-export abstract class Mouth implements Eat, Speak, Render {
-  protected tee: number
-  protected size: number
-  protected color: string
+export abstract class Mouth implements Eat, Speak, Render, EventSource {
+  /**
+   * Mouth tee
+   *
+   * @protected
+   * @type {number}
+   * @memberof Mouth
+   */
+  protected tee?: number
 
-  protected constructor(tee: number, size: number, color: string) {
+  /**
+   * Mouth size
+   *
+   * @protected
+   * @type {number}
+   * @memberof Mouth
+   */
+  protected size?: number
+
+  /**
+   * Mouth color
+   *
+   * @protected
+   * @type {string}
+   * @memberof Mouth
+   */
+  protected color?: string
+
+  /**
+   * Event bus channel
+   *
+   * @protected
+   * @type {EventBus}
+   * @memberof Mouth
+   */
+  protected busChannel: EventBus = busChannel
+
+  public addEventListener (eventName: string, callback: <T>(args: T) => void): void {
+
+  }
+
+  public setTee(tee: number): void {
     this.tee = tee
+  }
+
+  public setSize(size: number): void {
     this.size = size
-    this.color = color
   }
 
   public abstract eat(goods: Goods): void
@@ -29,14 +68,8 @@ export abstract class Mouth implements Eat, Speak, Render {
 }
 
 export class NormalMouth extends Mouth {
-  private messageSender: MessageSender = new MessageSender()
-
-  public constructor(tee: number, size: number, color: string) {
-    super(tee, size, color)
-  }
-
   public eat(goods: Goods): void {
-    console.log('Normal mouth eating goods...')
+    throw new Error('Method not implemented.')
   }
 
   public say(message: string): void {
@@ -52,9 +85,11 @@ export class CherryMouth extends Mouth {
   public eat(goods: Goods): void {
     throw new Error('Method not implemented.')
   }
+
   public say(message: string): void {
     throw new Error('Method not implemented.')
   }
+
   public render(): void {
     throw new Error('Method not implemented.')
   }
